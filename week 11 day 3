@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class wory 
+{
+    public static void main(String[] args)
+    {
+        Scanner xy = new Scanner(System.in);
+        String wory1 = xy.nextLine().trim();
+        String wory2 = xy.nextLine().trim();
+
+        if (wory1.length() < 3 || wory2.length() < 3) 
+        {
+            System.out.println("ERROR");
+        }
+        else
+        {
+            String firstThree1 = wory1.substring(0, 3);
+            String lastThree2 = new StringBuilder(wory2.substring(wory2.length() - 3)).reverse().toString();
+            if (firstThree1.equals(lastThree2)) 
+            {
+                System.out.println("GREAT");
+            } 
+            else 
+            {
+                System.out.println("TRY NEXT TIME");
+            }
+        }
+    }
+}
