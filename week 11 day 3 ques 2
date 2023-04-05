@@ -1,0 +1,32 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class shuvom 
+{
+    public static void main(String[] args) 
+    {
+        Scanner zz = new Scanner(System.in);
+        String stri2 = zz.nextLine().trim();
+        String stri3 = zz.nextLine().trim();
+
+        if (stri2.length() <= 3 || stri3.length() <= 3) 
+        {
+            System.out.println("Invalid Input");
+            return;
+        }
+
+        char[] charArray2 = stri2.toCharArray();
+        char[] charArray3 = stri3.toCharArray();
+
+        Arrays.sort(charArray2);
+        Arrays.sort(charArray3);
+
+        if (Arrays.equals(charArray2, charArray3))
+        {
+            System.out.println("ANAGRAM");
+        } else 
+        {
+            System.out.println("NOT ANAGRAM");
+        }
+    }
+}
