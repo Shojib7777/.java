@@ -1,0 +1,31 @@
+import java.io.*;
+import java.util.*;
+import java.util.Scanner;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        
+        Scanner obj= new Scanner(System.in);
+        
+        int four=obj.nextInt();
+        int six=obj.nextInt();
+        
+        if(four<0 || six<0){
+            
+            System.out.print(0);
+}
+        else{
+            
+            int newscore=4*four+6*six;
+            
+            System.out.print(newscore);
+            
+}
+        
+        
+        
+    }
+    
+}
