@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class shojib {
+    public static void main(String[] args) 
+    {
+        Scanner yy = new Scanner(System.in);
+        
+        
+        String braTags = yy.nextLine();
+        String name = yy.nextLine();
+        
+        
+        String output = braTags.substring(0, 2) + name + braTags.substring(2);
+        
+        
+        System.out.println(output);
+    }
+}
