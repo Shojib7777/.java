@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+public class shojib 
+{
+    public static void main(String[] args) 
+    {
+        Scanner input = new Scanner(System.in);
+        int numberSubjects = input.nextInt();
+        int totalMar = 0;
+        int[] mar = new int[numberSubjects];
+
+        for (int i = 0; i < numberSubjects; i++) 
+        {
+            mar[i] = input.nextInt();
+            totalMar += mar[i];
+        }
+
+        double percentage = (double) totalMar / (numberSubjects * 100) * 100;
+
+        char grade;
+        if (percentage > 90)
+        {
+            grade = 'A';
+            System.out.println(grade + "+");
+        }
+        else if (percentage >= 70 && percentage <= 89)
+        {
+            grade = 'A';
+            System.out.println(grade);
+        }
+        else if (percentage >= 60 && percentage <= 69)
+        {
+            grade = 'B';
+            System.out.println(grade);
+        }
+        else if (percentage >= 50 && percentage <= 59) 
+        {
+            grade = 'C';
+            System.out.println(grade);
+        }
+        else if (percentage <= 40)
+        {
+            grade = 'D';
+            System.out.println(grade);
+        } 
+        else
+        {
+            System.out.println("Invalid input!");
+        }
+    }
+}
