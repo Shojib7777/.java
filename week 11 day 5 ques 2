@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class BiggerNumberChecker 
+{
+    public static void main(String[] args) 
+    {
+        Scanner input = new Scanner(System.in);
+        int a = input.nextInt();
+        int b = input.nextInt();
+
+        boolean result = isBigger(a, b);
+        System.out.println(result);
+    }
+
+    public static boolean isBigger(int a, int b) 
+    
+    {
+        if (a >= 10 && a <= 1000 && b >= 10 && b <= 1000) 
+        {
+            return a > b;
+        }
+        else
+        {
+            System.out.println("Invalid Input");
+            return false;
+        }
+    }
+}
