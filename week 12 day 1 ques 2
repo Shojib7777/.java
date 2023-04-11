@@ -1,0 +1,54 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import java.util.function.Predicate;
+
+class Student {
+    private String name;
+    private int rollNo;
+    private String dep;
+    
+    public Student(String name, int rollNo, String dep) {
+        this.name = name;
+        this.rollNo = rollNo;
+        this.dep = dep;
+    }
+    
+    public String getName() {
+        return name;
+    }
+    
+    public int getRollNo() {
+        return rollNo;
+    }
+    
+    public String getDep() {
+        return dep;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sz = new Scanner(System.in);
+        int numStudents = sz.nextInt();
+        if (numStudents <= 1) {
+            System.out.println("Invalid");
+            return;
+        }
+        
+        List<Student> students = new ArrayList<>();
+        for (int i = 0; i < numStudents; i++) {
+            String name = sz.next();
+            int rollNo = sz.nextInt();
+            String department = sz.next();
+            Student student = new Student(name, rollNo, department);
+            students.add(student);
+        }
+        
+        Predicate<Student> csePredicate = student -> student.getDep().equals("CSE");
+        students.stream()
+                .filter(csePredicate)
+                .map(Student::getRollNo)
+                .forEach(System.out::println);
+    }
+}
