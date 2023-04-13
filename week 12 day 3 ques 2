@@ -1,0 +1,44 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import java.util.function.Predicate;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner zz = new Scanner(System.in);
+
+       
+        int numStrings = zz.nextInt();
+
+        
+        if (numStrings <= 1) 
+        {
+            System.out.println("Invalid");
+            return;
+        }
+
+        
+        List<String> stringList = new ArrayList<>();
+        for (int i = 0; i < numStrings; i++) {
+            String str = zz.next();
+            stringList.add(str);
+        }
+
+        
+        Predicate<String> endsWithG = s -> s.endsWith("g");
+        List<String> filteredList = new ArrayList<>();
+        for (String str : stringList) 
+        {
+            if (endsWithG.test(str))
+            {
+                filteredList.add(str);
+            }
+        }
+
+        
+        for (String str : filteredList) 
+        {
+            System.out.println(str);
+        }
+    }
+}
