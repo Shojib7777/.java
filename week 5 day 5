@@ -1,0 +1,35 @@
+import java.io.*;
+import java.util.*;
+
+public class shojib {
+public static void main(String [] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        int c = sc.nextInt();
+        int sum=0;
+         if (c<=7)
+             {
+                     int m[]= new int[c];
+                    for(int i=0; i<m.length;i++)
+                             {
+                                 m[i]=sc.nextInt();    
+                                 sum = sum+m[i];
+                             }
+                    int per= ((sum/c));
+                    if(per>90)
+                         {
+                          System.out.println("A+");
+                         }
+                    else if(per>=75 && per<=89)
+                        {
+                          System.out.println("A");
+                        }
+                    else if(per>=60 && per<=69)
+                        {
+                          System.out.println("B");
+                        }
+ 
+         }
+    }
+    }
+
