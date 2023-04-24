@@ -1,0 +1,42 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class Student {
+ String name;
+ int regNo;
+
+ void show() {
+ System.out.println(name + "," + regNo);
+ }
+}
+
+public class Shojib {
+
+ public static void main(String[] args) {
+ 
+ Scanner scanner = new Scanner(System.in);
+ Student student = new Student();
+
+ int choice = scanner.nextInt();
+ switch (choice) {
+ case 1:
+ student.name = scanner.next();
+ student.regNo = scanner.nextInt();
+ while (student.regNo <= 0) {
+ student.regNo = scanner.nextInt();
+ }
+ student.show();
+ break;
+ case 2:
+ student.show();
+ break;
+ default:
+ System.out.println("Wrong Choice");
+ }
+ scanner.close();
+ }
+}
+
