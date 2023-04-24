@@ -1,0 +1,40 @@
+import java.io.*; 
+import java.util.*; 
+import java.text.*; 
+import java.math.*; 
+import java.util.regex.*; 
+ 
+public class Shojib { 
+ 
+    public static void main(String[] args) { 
+        Scanner sc=new Scanner(System.in); 
+        ArrayList<Integer> bl = new ArrayList<>(); 
+        int b=sc.nextInt(); 
+        int x = 2; 
+        if(b>=10 && b<=50){ 
+            for(int i=2;i<=b;i++)
+            { 
+                if(b%i == 0)
+                { 
+                    x = i; 
+                    break; 
+                } 
+            } 
+            while(b != 1){ 
+            while(b%x == 0){ 
+                bl.add(x); 
+                b/=x; 
+                 
+            } 
+                x++; 
+            } 
+            for(int r : bl){ 
+                System.out.print(r+" "); 
+            } 
+        } 
+        else
+        { 
+            System.out.println("Invalid"); 
+        } 
+    } 
+}
