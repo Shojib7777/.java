@@ -1,0 +1,27 @@
+import java.io.*;
+import java.util.*;
+
+public class tempconverter {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        double fahrenhiet,celsius;
+        
+        Scanner sc = new Scanner(System.in);
+        int temp = sc.nextInt();
+        switch (temp)
+        {
+             case 1:
+            fahrenhiet = sc.nextDouble();
+            celsius=((fahrenhiet-32)*5/9);
+            System.out.printf("%.2f" , celsius);
+            break;
+            
+            case 2:
+            celsius = sc.nextDouble();
+            fahrenhiet = ((celsius*9/5)+32);
+            System.out.println(fahrenhiet);
+           
+        } 
+    }
+}
