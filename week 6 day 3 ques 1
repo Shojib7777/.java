@@ -1,0 +1,27 @@
+class Student {
+String name;
+
+public Student(Object name) {
+if (name instanceof String) {
+this.name = (String) name;
+} else {
+this.name = "Unknown";
+}
+}
+
+public void printName() {
+System.out.println(this.name);
+}
+}
+
+public class Main {
+public static void main(String[] args) {
+Student studentnum1 = new Student("Rahul");
+studentnum1.printName();
+
+Student studentnum2 = new Student(33);
+studentnum2.printName();
+
+
+}
+}
