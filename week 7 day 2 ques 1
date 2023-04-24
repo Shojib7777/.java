@@ -1,0 +1,13 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner ff = new Scanner(System.in);
+
+        
+        String password = ff.nextLine();
+
+        password = password.toLowerCase().replace(" ", "$");
+        System.out.println(password);
+    }
+}
