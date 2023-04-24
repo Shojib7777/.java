@@ -1,0 +1,53 @@
+import java.io.*;
+import java.util.*;
+
+public class Shojib {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        
+        int size1 = scanner.nextInt();
+        int[] arr1 = new int[size1];
+        for (int i = 0; i < size1; i++) {
+            arr1[i] = scanner.nextInt();
+        }
+
+        int size2 = scanner.nextInt();
+        int[] arr2 = new int[size2];
+        for (int i = 0; i < size2; i++) {
+            arr2[i] = scanner.nextInt();
+        }
+
+        int size3 = scanner.nextInt();
+        int[] arr3 = new int[size3];
+        for (int i = 0; i < size3; i++) {
+            arr3[i] = scanner.nextInt();
+        }
+
+        
+        Set<Integer> set1 = new HashSet<>();
+        Set<Integer> set2 = new HashSet<>();
+        Set<Integer> set3 = new HashSet<>();
+
+        for (int i = 0; i < size1; i++) {
+            set1.add(arr1[i]);
+        }
+        for (int i = 0; i < size2; i++) {
+            set2.add(arr2[i]);
+        }
+        for (int i = 0; i < size3; i++) {
+            set3.add(arr3[i]);
+        }
+
+        set1.retainAll(set2);
+        set1.retainAll(set3);
+
+        
+        List<Integer> commonElements = new ArrayList<>(set1);
+        Collections.sort(commonElements);
+        for (int i = 0; i < commonElements.size(); i++) {
+            System.out.print(commonElements.get(i) + " ");
+        }
+    }
+}
