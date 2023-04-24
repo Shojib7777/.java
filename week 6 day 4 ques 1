@@ -1,0 +1,44 @@
+import java.io.*;
+import java.util.*;
+public class Solution {
+    public static void main(String[] args) {
+        // Example usage
+        double[][] marks = {
+            {10.5, 2.5, 15},
+            {5.25, 6.75, 11.25}
+        };
+        double[] averages = average_marks(marks);
+        for (double avg : averages) {
+            System.out.print(avg + " ");
+        }
+    }
+
+    public static double[] average_marks(double[][] marks) {
+        double[] averages = new double[marks.length];
+        for (int i = 0; i < marks.length; i++) {
+            double[] student_marks = marks[i];
+            // Find the indices of the best two marks
+            int best4_index = 0;
+            int best5_index = 1;
+            if (student_marks[best5_index] > student_marks[best4_index]) {
+                int temp = best4_index;
+                best4_index = best5_index;
+                best5_index = temp;
+            }
+            for (int j = 2; j < student_marks.length; j++) {
+                if (student_marks[j] > student_marks[best4_index]) {
+                    best5_index = best4_index;
+                    best4_index = j;
+                } else if (student_marks[j] > student_marks[best5_index]) {
+                    best5_index = j;
+                }
+            }
+            // Compute the average of the best two marks
+            double best4 = student_marks[best4_index];
+            double best5 = student_marks[best5_index];
+            double average = (best4 + best5) / 2;
+            averages[i] = average;
+        }
+        return averages;
+    }
+}
