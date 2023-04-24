@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class TreeSorting {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int[] trees1 = new int[10];
+        
+        
+        for (int i = 0; i < 10; i++) {
+            trees1[i] = scanner.nextInt();
+        }
+        
+       
+        for (int i = 0; i < 9; i++)
+        {
+            boolean swapped = false;
+            for (int j = 0; j < 9 - i; j++) 
+            {
+                if (trees1[j] > trees1[j + 1]) 
+                {
+                    
+                    int temp = trees1[j];
+                    trees1[j] = trees1[j + 1];
+                    trees1[j + 1] = temp;
+                    swapped = true;
+                }
+            }
+           
+            if (!swapped)
+            {
+                break;
+            }
+        }
+        
+        
+        for (int i = 0; i < 10; i++)
+        {
+            System.out.print(trees1[i] + " ");
+        }
+    }
+}
