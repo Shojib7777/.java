@@ -1,0 +1,42 @@
+import java.io.*;
+import java.util.*;
+
+public class Shojib {
+
+    public static void main(String[] args) 
+    {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner jaber=new Scanner(System.in);
+        int size= jaber.nextInt();
+        if(size<0)
+        {
+            System.out.println("Invalid Array Size");
+            System.exit(0);
+        }
+        else{
+            int arr[]=new int[size];
+            int sum=0;
+            int mul=1;
+            for(int i=0;i<size;i++)
+            {
+                arr[i]=jaber.nextInt();
+                sum+=arr[i];
+                mul*=arr[i];
+            }
+            
+            int choice=jaber.nextInt();
+            if(choice==1)
+            {
+                System.out.println(sum);
+            }
+            else if(choice==2)
+            {
+                System.out.println(mul);
+            }
+            else{
+                System.out.println("Wrong Choice");
+            }
+            
+        }
+    }
+}
