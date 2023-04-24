@@ -1,0 +1,27 @@
+import java.io.*;
+import java.util.*;
+
+public class Shojib {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner jaber=new Scanner(System.in);
+        int no=jaber.nextInt();
+        if(no>=20 && no<=400)
+        {
+            if((no%2==0) && (no%3==0))
+            {
+                // result=true;
+                System.out.println("True");
+            }
+            else{
+                System.out.println("False");
+            }
+            
+            // System.out.println(result);
+        }
+        else{
+            System.out.println("Invalid Input");
+        }
+    }
+}
