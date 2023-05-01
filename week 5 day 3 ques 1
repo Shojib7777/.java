@@ -1,0 +1,55 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+
+
+class  java1{
+    private String name;
+    private int regNo;
+
+    public java1() {
+        name = null;
+        regNo = 0;
+    }
+
+    public void show() {
+        System.out.println(name + "," + regNo);
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setregNo(int regNo) {
+        this.regNo = regNo;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int choice = sc.nextInt();
+
+        if (choice == 1) {
+            java1 s = new java1();
+            String name = sc.next();
+            int regNo = sc.nextInt();
+            while (regNo < 1) {
+                System.out.println("Invalid registration number, please enter a positive value");
+                regNo = sc.nextInt();
+            }
+            s.setName(name);
+            s.setregNo(regNo);
+            s.show();
+        } else if (choice == 2) {
+            java1 s = new java1();
+            s.show();
+        } else {
+            System.out.println("Wrong Choice");
+        }
+        sc.close();
+    }
+}
